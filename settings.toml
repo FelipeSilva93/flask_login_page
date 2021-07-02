@@ -1,0 +1,45 @@
+[default]
+DEBUG = false
+INSTALLED_APPS = [
+    "app.ext.db: init_app",
+    "app.ext.auth:init_app",
+     "app.ext.admin:init_app",
+    "app.ext.cli:init_app",
+    "app.ext.site:init_app",
+   
+]
+
+FLASK_ADMIN_SWATCH = 'cerulean'
+
+SQLALCHEMY_TRACK_MODIFICATIONS = false
+
+
+
+[development]
+DEBUG = true
+INSTALLED_APPS = [
+    "app.ext.db: init_app",
+    "app.ext.auth:init_app",
+     "app.ext.admin:init_app",
+    "app.ext.cli:init_app",
+    "app.ext.site:init_app",
+   
+]
+SQLALCHEMY_DATABASE_URI = 'sqlite+pysqlite:///dbteste.db'
+SQLALCHEMY_TRACK_MODIFICATIONS = false
+
+
+[production]
+DEBUG = true
+
+INSTALLED_APPS = [
+    "app.ext.site:init_app",
+    "app.ext.db: init_app",
+    "app.ext.cli:init_app",
+    "app.ext.admin:init_app"
+
+]
+
+
+# SQLALCHEMY_DATABASE_URI = 'set the db local'
+SQLALCHEMY_TRACK_MODIFICATIONS = false
